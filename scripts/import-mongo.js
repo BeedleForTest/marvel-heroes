@@ -45,12 +45,12 @@ const insertHeroes = (db, callback) => {
             	  "powers": data.powers.split(","),
             	  "partners": data.partners.split(","),
             	  "skills": {
-            	    "intelligence": parseInt(data.intelligence, 10),
-            	    "strength": parseInt(data.strength, 10),
-            	    "speed": parseInt(data.speed, 10),
-            	    "durability": parseInt(data.durability, 10),
-            	    "power": parseInt(data.power, 10),
-            	    "combat": parseInt(data.combat, 10)
+            	    "intelligence": data.intelligence ? parseInt(data.intelligence, 10) : data.intelligence,
+            	    "strength": data.strength ? parseInt(data.strength, 10) : data.strength,
+            	    "speed": data.speed ? parseInt(data.speed, 10) : data.speed,
+            	    "durability": data.durability ? parseInt(data.durability, 10) : data.durability,
+            	    "power": data.power ?  parseInt(data.power, 10) : data.power,
+            	    "combat": data.combat ? parseInt(data.combat, 10) : data.combat
             	  },
             	  "creators": data.creators.split(",")
             	});
